@@ -34,6 +34,10 @@ REasy.prototype = {
     return this;
   },
 
+  andEndWith: function(value) {
+    return this.endWith(value);
+  },
+
   have: function(value) {
     this.exp += value;
     return this;
