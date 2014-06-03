@@ -8,6 +8,7 @@ REasy.prototype = {
   outputString: '',
   exp: '',
   flasgs: '',
+  ending_added: false,
 
   /*
     Returns: array with matched options
@@ -19,9 +20,17 @@ REasy.prototype = {
 
   startWith: function(value) {
     if(this.exp > 0) {
-      throw new Error('You expresion already has been initializated. ' + this.exp);
+      throw new Error('Your expresion already have been initializated. ' + this.exp);
     }
     this.exp += "^" + value;
+    return this;
+  },
+
+  endWith: function (value) {
+    if( "$" == this.exp.slice(-1) ) {
+      throw new Error('Your expresion already has an ending. ' + this.exp);
+    }
+    this.exp += value + "$";
     return this;
   },
 
