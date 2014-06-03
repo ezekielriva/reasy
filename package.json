@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/ezekielriva/reasy/issues"
   },
-  "homepage": "https://github.com/ezekielriva/reasy"
+  "homepage": "https://github.com/ezekielriva/reasy",
+  "devDependencies": {
+    "karma": "^0.12.16",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5"
+  }
 }
