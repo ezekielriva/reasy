@@ -34,8 +34,9 @@ REasy.prototype = {
     return this;
   },
 
-  andEndWith: function(value) {
-    return this.endWith(value);
+  atLeastOne: function() {
+    var value = ( arguments.length > 0 )? arguments[0] + "+" : "+";
+    return this.have(value);
   },
 
   have: function(value) {
@@ -43,6 +44,10 @@ REasy.prototype = {
     return this;
   },
 
+  /* Aliases */
+  andEndWith: function(value) {
+    return this.endWith(value);
+  },
   andHave: function(value) {
     return this.have(value);
   },

@@ -62,6 +62,28 @@ describe("REasy", function() {
     });
   });
 
+  describe(".atLeastOne", function() {
+    beforeEach(function() {
+      reasy = new REasy();
+    });
+
+    it("should add a plus into exp if it has not arguments", function() {
+      reasy.have('b');
+      reasy.atLeastOne();
+      expect( reasy.exp ).toEqual('b+');
+    });
+
+    it("should add a plus and its arguments", function() {
+      reasy.have('b');
+      reasy.atLeastOne('b');
+      expect( reasy.exp ).toEqual('bb+');
+    });
+
+    it("should return object", function() {
+      expect( reasy.atLeastOne('b') ).toEqual(reasy);
+    });
+  });
+
   describe(".excecute", function() {
     it('match abba', function() {
       reasy = new REasy('abba');
