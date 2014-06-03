@@ -1,0 +1,25 @@
+{
+  "name": "reasy",
+  "version": "0.0.0",
+  "description": "A simple regex builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" &amp;&amp; exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ezekielriva/reasy.git"
+  },
+  "keywords": [
+    "regex",
+    "javascript",
+    "easy",
+    "light"
+  ],
+  "author": "Ezekiel",
+  "license": "GPL v2",
+  "bugs": {
+    "url": "https://github.com/ezekielriva/reasy/issues"
+  },
+  "homepage": "https://github.com/ezekielriva/reasy"
+}
