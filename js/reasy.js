@@ -7,7 +7,7 @@ REasy.prototype = {
   originalString: '',
   outputString: '',
   exp: '',
-  flasgs: '',
+  _flags: '',
   ending_added: false,
 
   helpers: {
@@ -41,7 +41,7 @@ REasy.prototype = {
     Returns: array with matched options
   */
   execute: function() {
-    var finalExpresion = new RegExp(this.exp, this.flags);
+    var finalExpresion = new RegExp(this.exp, this._flags);
     return this.originalString.match(finalExpresion);
   },
 
@@ -114,6 +114,16 @@ REasy.prototype = {
     this.exp += '(';
     callback(this);
     this.exp += ')';
+    return this;
+  },
+
+  addFlag: function(flag) {
+    this._flags += flag;
+    return this;
+  },
+
+  clearFlags: function() {
+    this._flags = '';
     return this;
   },
 
