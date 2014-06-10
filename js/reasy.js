@@ -52,6 +52,16 @@ REasy.prototype = {
     return this;
   },
 
+  any: function(value) {
+    this.have(value);
+    this.exp += '*';
+    return this;
+  },
+
+  anything: function() {
+    return this.atLeastOne('.');
+  },
+
   maybe: function(value) {
     this.have(value);
     this.exp += '?';

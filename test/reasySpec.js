@@ -77,6 +77,36 @@ describe("REasy", function() {
     });
   });
 
+  describe(".any", function() {
+    beforeEach(function() {
+      reasy = new REasy();
+    });
+
+    it("should add a asterisk into exp if it has not arguments", function() {
+      reasy.any('b');
+      expect( reasy.exp ).toEqual('(?:b)*');
+    });
+
+    it("should return object", function() {
+      expect( reasy.any('b') ).toEqual(reasy);
+    });
+  });
+
+  describe(".anything", function() {
+    beforeEach(function() {
+      reasy = new REasy();
+    });
+
+    it("should add expression to search any character", function() {
+      reasy.anything();
+      expect( reasy.exp ).toEqual('(?:.)+');
+    });
+
+    it("should return object", function() {
+      expect( reasy.anything() ).toEqual(reasy);
+    });
+  });
+
   describe('.maybe', function() {
     beforeEach(function () {
       reasy = new REasy();
