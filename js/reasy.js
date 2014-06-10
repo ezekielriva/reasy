@@ -18,8 +18,14 @@ REasy.prototype = {
     return this.originalString.match(finalExpresion);
   },
 
+  clearExp: function() {
+    this.exp = '';
+    return this;
+  },
+
   setTestString: function(value) {
     this.originalString = value;
+    return this;
   },
 
   startWith: function(value) {
