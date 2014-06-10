@@ -1,5 +1,5 @@
 var REasy = function (string) {
-  this.originalString = string;
+  this.setTestString(string);
 };
 
 REasy.prototype = {
@@ -16,6 +16,10 @@ REasy.prototype = {
   execute: function() {
     var finalExpresion = new RegExp(this.exp, this.flags);
     return this.originalString.match(finalExpresion);
+  },
+
+  setTestString: function(value) {
+    this.originalString = value;
   },
 
   startWith: function(value) {
