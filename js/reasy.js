@@ -68,8 +68,14 @@ REasy.prototype = {
     return this;
   },
 
-  have: function(value) {
+  have: function(value, n, m) {
     this.exp += '(?:' + value + ')';
+    if ( 'integer' === typeof(n) && n > 0 && 'undefined' === typeof(m) ) {
+      this.exp += '{' + n + '}';
+    }
+    if ( 'integer' === typeof(m) && 'integer' === typeof(n) && n > 0 && m > 0) {
+      this.exp += '{' + n + ',' + m + '}';
+    }
     return this;
   },
 

@@ -60,6 +60,16 @@ describe("REasy", function() {
     it("should return object", function() {
       expect( reasy.have('b') ).toEqual(reasy);
     });
+
+    it("should add specific quantity matcher", function() {
+      reasy.have('b', 1)
+      expect( reasy.exp ).toEqual('(?:b){1}');
+    });
+
+    it("should add specific quantity matcher and limit of ocurrences", function() {
+      reasy.have('b', 1, 2)
+      expect( reasy.exp ).toEqual('(?:b){1,2}');
+    });
   });
 
   describe(".atLeastOne", function() {
