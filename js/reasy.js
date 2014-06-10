@@ -26,7 +26,8 @@ REasy.prototype = {
     if(this.exp > 0) {
       throw new Error('Your expresion already have been initializated. ' + this.exp);
     }
-    this.exp += "^" + value;
+    this.exp += "^";
+    this.have(value);
     return this;
   },
 
@@ -34,28 +35,32 @@ REasy.prototype = {
     if( "$" == this.exp.slice(-1) ) {
       throw new Error('Your expresion already has an ending. ' + this.exp);
     }
-    this.exp += value + "$";
+    this.have(value);
+    this.exp += "$";
     return this;
   },
 
-  atLeastOne: function() {
-    var value = ( arguments.length > 0 )? arguments[0] + "+" : "+";
-    return this.have(value);
+  atLeastOne: function(value) {
+    this.have(value);
+    this.exp += '+';
+    return this;
   },
 
   maybe: function(value) {
-    return this.have(value + '?');
+    this.have(value);
+    this.exp += '?';
+    return this;
   },
 
   have: function(value) {
-    this.exp += value;
+    this.exp += '(?:' + value + ')';
     return this;
   },
 
   group: function(callback) {
-    this.have('(');
+    this.exp += '(';
     callback(this);
-    this.have(')');
+    this.exp += ')';
     return this;
   },
 

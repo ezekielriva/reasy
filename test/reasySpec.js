@@ -14,7 +14,7 @@ describe("REasy", function() {
 
     it("should add to exp the initial state of string matched", function() {
       reasy.startWith('b');
-      expect(reasy.exp).toEqual('^b');
+      expect(reasy.exp).toEqual('^(?:b)');
     });
 
     it("should return object", function() {
@@ -34,7 +34,7 @@ describe("REasy", function() {
 
     it("should add to exp the ending state of string matched", function() {
       reasy.endWith('b');
-      expect(reasy.exp).toEqual('b$');
+      expect(reasy.exp).toEqual('(?:b)$');
     });
 
     it("should return object", function() {
@@ -54,7 +54,7 @@ describe("REasy", function() {
 
     it("should add to matcher current value", function() {
       reasy.have('b');
-      expect(reasy.exp).toEqual('b');
+      expect(reasy.exp).toEqual('(?:b)');
     });
 
     it("should return object", function() {
@@ -68,15 +68,8 @@ describe("REasy", function() {
     });
 
     it("should add a plus into exp if it has not arguments", function() {
-      reasy.have('b');
-      reasy.atLeastOne();
-      expect( reasy.exp ).toEqual('b+');
-    });
-
-    it("should add a plus and its arguments", function() {
-      reasy.have('b');
       reasy.atLeastOne('b');
-      expect( reasy.exp ).toEqual('bb+');
+      expect( reasy.exp ).toEqual('(?:b)+');
     });
 
     it("should return object", function() {
@@ -95,7 +88,7 @@ describe("REasy", function() {
 
     it('should add a text with a question mark', function() {
       reasy.maybe('ab');
-      expect( reasy.exp ).toEqual('ab?');
+      expect( reasy.exp ).toEqual('(?:ab)?');
     });
   });
 
@@ -112,7 +105,7 @@ describe("REasy", function() {
       reasy.group(function(regex) {
         regex.have('a');
       });
-      expect( reasy.exp ).toEqual('(a)');
+      expect( reasy.exp ).toEqual('((?:a))');
     });
   });
 
