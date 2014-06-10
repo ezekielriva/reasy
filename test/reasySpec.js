@@ -99,6 +99,23 @@ describe("REasy", function() {
     });
   });
 
+  describe('.group', function() {
+    beforeEach(function () {
+      reasy = new REasy();
+    });
+
+    it("should return object", function() {
+      expect( reasy.group(function(regex) { regex.have('a') }) ).toEqual(reasy);
+    });
+
+    it('should add a text with a question mark', function() {
+      reasy.group(function(regex) {
+        regex.have('a');
+      });
+      expect( reasy.exp ).toEqual('(a)');
+    });
+  });
+
   describe(".excecute", function() {
     it('match abba', function() {
       reasy = new REasy('abba');
@@ -116,6 +133,7 @@ describe("REasy", function() {
            .endWith('c');
       expect( reasy.execute() ).toContain("abbac");
     });
+
   });
 
 });

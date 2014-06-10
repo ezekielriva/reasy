@@ -52,6 +52,13 @@ REasy.prototype = {
     return this;
   },
 
+  group: function(callback) {
+    this.have('(');
+    callback(this);
+    this.have(')');
+    return this;
+  },
+
   /* Aliases */
   andEndWith: function(value) {
     return this.endWith(value);
