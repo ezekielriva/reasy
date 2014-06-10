@@ -10,6 +10,26 @@ REasy.prototype = {
   flasgs: '',
   ending_added: false,
 
+  helpers: {
+    ANY: {
+      SINGLECHAR: '.',
+      DIGIT: '\d',
+      NONDIGIT: '\D',
+      ALPHANUMERIC: '\w',
+      SINGLEWHITESPACE: '\s',
+      NONWHITESPACE: '\S',
+    },
+    FEED: {
+      FORM: '\f',
+      LINE: '\n',
+    },
+    CARRIAGERETURN: '\r',
+    TAB: '\t',
+    VERTICALTAB: '\v',
+    NONWORD: '\W',
+    NIL: '\0'
+  },
+
   /*
     Returns: array with matched options
   */
@@ -59,7 +79,7 @@ REasy.prototype = {
   },
 
   anything: function() {
-    return this.atLeastOne('.');
+    return this.atLeastOne(this.helpers.ANY.SINGLECHAR);
   },
 
   maybe: function(value) {
