@@ -84,6 +84,21 @@ describe("REasy", function() {
     });
   });
 
+  describe('.maybe', function() {
+    beforeEach(function () {
+      reasy = new REasy();
+    });
+
+    it("should return object", function() {
+      expect( reasy.maybe('ab') ).toEqual(reasy);
+    });
+
+    it('should add a text with a question mark', function() {
+      reasy.maybe('ab');
+      expect( reasy.exp ).toEqual('ab?');
+    });
+  });
+
   describe(".excecute", function() {
     it('match abba', function() {
       reasy = new REasy('abba');

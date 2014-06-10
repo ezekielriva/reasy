@@ -39,6 +39,10 @@ REasy.prototype = {
     return this.have(value);
   },
 
+  maybe: function(value) {
+    return this.have(value + '?');
+  },
+
   have: function(value) {
     this.exp += value;
     return this;
