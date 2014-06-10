@@ -12,22 +12,29 @@ REasy.prototype = {
 
   helpers: {
     ANY: {
-      SINGLECHAR: '.',
+      SINGLE_CHAR: '.',
       DIGIT: '\d',
-      NONDIGIT: '\D',
+      NON_DIGIT: '\D',
       ALPHANUMERIC: '\w',
-      SINGLEWHITESPACE: '\s',
-      NONWHITESPACE: '\S',
+      SINGLE_WHITESPACE: '\s',
+      NON_WHITESPACE: '\S',
     },
     FEED: {
       FORM: '\f',
       LINE: '\n',
     },
-    CARRIAGERETURN: '\r',
+    CARRIAGE_RETURN: '\r',
     TAB: '\t',
-    VERTICALTAB: '\v',
-    NONWORD: '\W',
-    NIL: '\0'
+    VERTICAL_TAB: '\v',
+    NON_WORD: '\W',
+    NIL: '\0',
+
+    FLAGS: {
+      GLOBAL: 'g',
+      CASE_SENSITIVE: 'i',
+      MULTI_LINE: 'm',
+      STICKY: 'y'
+    }
   },
 
   /*
@@ -79,7 +86,11 @@ REasy.prototype = {
   },
 
   anything: function() {
-    return this.atLeastOne(this.helpers.ANY.SINGLECHAR);
+    return this.any(this.helpers.ANY.SINGLE_CHAR);
+  },
+
+  something: function() {
+    return this.atLeastOne(this.helpers.ANY.SINGLE_CHAR);
   },
 
   maybe: function(value) {
