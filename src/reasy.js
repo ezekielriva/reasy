@@ -57,8 +57,7 @@ REasy.prototype = {
   //  - `[null]` if does not match anything.
   // - - -
   execute: function() {
-    var finalExpresion = new RegExp(this.exp, this._flags);
-    return this._testString.match(finalExpresion);
+    return this._testString.match( this.getRegex() );
   },
 
   // Clean the generated expresion
@@ -77,6 +76,14 @@ REasy.prototype = {
   setTestString: function(value) {
     this._testString = value;
     return this;
+  },
+
+  // Get the generated regex
+  //
+  // Return: `[object RegExp]`
+  // - - -
+  getRegex: function() {
+    return new RegExp(this.exp, this._flags);
   },
 
   // Set initial matching value.
