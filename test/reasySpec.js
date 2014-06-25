@@ -9,7 +9,7 @@ describe("REasy", function() {
 
   describe(".startWith", function() {
     beforeEach(function() {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should add to exp the initial state of string matched", function() {
@@ -29,7 +29,7 @@ describe("REasy", function() {
 
   describe(".endWith/.andEndWith", function() {
     beforeEach(function() {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should add to exp the ending state of string matched", function() {
@@ -49,7 +49,7 @@ describe("REasy", function() {
 
   describe(".have/.andHave", function() {
     beforeEach(function() {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should add to matcher current value", function() {
@@ -74,7 +74,7 @@ describe("REasy", function() {
 
   describe(".atLeastOne", function() {
     beforeEach(function() {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should add a plus into exp if it has not arguments", function() {
@@ -89,7 +89,7 @@ describe("REasy", function() {
 
   describe(".any", function() {
     beforeEach(function() {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should add a asterisk into exp if it has not arguments", function() {
@@ -104,7 +104,7 @@ describe("REasy", function() {
 
   describe(".anything", function() {
     beforeEach(function() {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should add expression to search any character", function() {
@@ -119,7 +119,7 @@ describe("REasy", function() {
 
   describe('.maybe', function() {
     beforeEach(function () {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should return object", function() {
@@ -134,7 +134,7 @@ describe("REasy", function() {
 
   describe('.group', function() {
     beforeEach(function () {
-      reasy = new REasy();
+      reasy = new Reasy();
     });
 
     it("should return object", function() {

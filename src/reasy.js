@@ -3,11 +3,11 @@
 // Easy constuctor that can get a test string.
 //   - string `[string]` `(optional)`: original string to apply the regex
 // - - -
-var REasy = function (string) {
+var Reasy = function (string) {
   this.setTestString(string);
 };
 
-REasy.prototype = {
+Reasy.prototype = {
   // Properties
   // ----------
   // _testString `[string]`: target of regex
@@ -209,7 +209,7 @@ REasy.prototype = {
   // - - -
   group: function(callback) {
     this.exp += '(';
-    callback(this);
+    callback(this).bind(this);
     this.exp += ')';
     return this;
   },
