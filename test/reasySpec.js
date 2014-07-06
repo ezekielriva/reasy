@@ -1,9 +1,9 @@
-describe("REasy", function() {
+describe("Reasy", function() {
   var reasy;
   describe("constructor", function() {
     it('should initialize original string', function() {
-      var reasy = new REasy('original');
-      expect(reasy.originalString).toEqual('original');
+      reasy = new Reasy('original');
+      expect(reasy._testString).toEqual('original');
     });
   });
 
@@ -19,11 +19,6 @@ describe("REasy", function() {
 
     it("should return object", function() {
       expect(reasy.startWith('b')).toEqual(reasy);
-    });
-
-    it("should not add a new initial value if already exists one", function() {
-      reasy.startWith('b');
-      expect( reasy.startWith('b') ).toThrow;
     });
   });
 
@@ -62,12 +57,12 @@ describe("REasy", function() {
     });
 
     it("should add specific quantity matcher", function() {
-      reasy.have('b', 1)
+      reasy.have('b', 1);
       expect( reasy.exp ).toEqual('(?:b){1}');
     });
 
     it("should add specific quantity matcher and limit of ocurrences", function() {
-      reasy.have('b', 1, 2)
+      reasy.have('b', 1, 2);
       expect( reasy.exp ).toEqual('(?:b){1,2}');
     });
   });
@@ -109,7 +104,7 @@ describe("REasy", function() {
 
     it("should add expression to search any character", function() {
       reasy.anything();
-      expect( reasy.exp ).toEqual('(?:.)+');
+      expect( reasy.exp ).toEqual('(?:.)*');
     });
 
     it("should return object", function() {
@@ -138,7 +133,9 @@ describe("REasy", function() {
     });
 
     it("should return object", function() {
-      expect( reasy.group(function(regex) { regex.have('a') }) ).toEqual(reasy);
+      expect( reasy.group(function(reasy) {
+        reasy.have('a');
+      }) ).toEqual(reasy);
     });
 
     it('should add a text with a question mark', function() {
@@ -151,22 +148,12 @@ describe("REasy", function() {
 
   describe(".excecute", function() {
     it('match abba', function() {
-      reasy = new REasy('abba');
+      reasy = new Reasy('abba');
       reasy.startWith('a')
            .have('bb')
            .andHave('a');
       expect( reasy.execute() ).toContain("abba");
     });
-
-    it('match abbac', function() {
-      reasy = new REasy('abbac');
-      reasy.startWith('a')
-           .have('bb')
-           .andHave('a')
-           .endWith('c');
-      expect( reasy.execute() ).toContain("abbac");
-    });
-
   });
 
 });
