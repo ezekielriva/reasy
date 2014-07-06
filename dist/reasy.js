@@ -100,7 +100,7 @@ var Reasy = (function () {
     //  - Your expresion already have been initializated. {expresion}
     // - - -
     startWith: function(value) {
-      if(this.exp > 0) {
+      if(this.exp.length > 0) {
         throw new Error('Your expresion already have been initializated. ' + this.exp);
       }
       this.exp += "^";
@@ -211,7 +211,7 @@ var Reasy = (function () {
     // - - -
     group: function(callback) {
       this.exp += '(';
-      callback(this).bind(this);
+      callback(this);
       this.exp += ')';
       return this;
     },
