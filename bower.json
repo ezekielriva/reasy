@@ -1,0 +1,26 @@
+{
+  "name": "reasy",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ezekielriva/reasy",
+  "authors": [
+    "Ezekiel <ezerivadeneiral@gmail.com>"
+  ],
+  "description": "Regex builder",
+  "main": "dist/reasy",
+  "keywords": [
+    "reasy",
+    "regex",
+    "expression",
+    "regular",
+    "easy",
+    "ligthweight"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
