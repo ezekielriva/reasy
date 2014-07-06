@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['<%= jshint.files %>', 'Gruntfile.js'],
-      tasks: ['jshint', 'karma']
+      tasks: ['jshint']
     }
   });
 
@@ -52,11 +52,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-karma-coveralls');
 
   // this would be run by typing "grunt test" on the command line
-  grunt.registerTask('test', ['jshint', 'karma']);
+  grunt.registerTask('test', ['jshint', 'karma', 'coveralls']);
 
   // the default task can be run just by typing "grunt" on the command line
-  grunt.registerTask('default', ['jshint', 'karma', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'karma', 'coveralls', 'concat', 'uglify']);
 };
 
