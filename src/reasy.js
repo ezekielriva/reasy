@@ -121,7 +121,7 @@ var Reasy = (function () {
     //  - Your expresion already has an ending. {expresion}
     // - - -
     endWith: function (value) {
-      if( "$" == this.exp.slice(-1) ) {
+      if( "$" === this.exp.slice(-1) ) {
         throw new Error('Your expresion already has an ending. ' + this.exp);
       }
       this.have(value);

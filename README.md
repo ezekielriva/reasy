@@ -1,5 +1,7 @@
 Reasy JS
 =====
+[![Build Status](https://travis-ci.org/ezekielriva/reasy.svg?branch=master)](https://travis-ci.org/ezekielriva/reasy)
+[![Code Climate](https://codeclimate.com/github/ezekielriva/reasy.png)](https://codeclimate.com/github/ezekielriva/reasy)
 
 Easy regex builder.
 
