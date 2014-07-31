@@ -133,14 +133,14 @@ describe("Reasy", function() {
     });
 
     it("should return object", function() {
-      expect( reasy.group(function(reasy) {
-        reasy.have('a');
+      expect( reasy.group(function() {
+        this.have('a');
       }) ).toEqual(reasy);
     });
 
     it('should add a text with a question mark', function() {
-      reasy.group(function(regex) {
-        regex.have('a');
+      reasy.group(function() {
+        this.have('a');
       });
       expect( reasy.exp ).toEqual('((?:a))');
     });

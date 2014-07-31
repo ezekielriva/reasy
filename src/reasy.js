@@ -211,7 +211,7 @@ var Reasy = (function () {
     // - - -
     group: function(callback) {
       this.exp += '(';
-      callback(this);
+      callback.apply(this);
       this.exp += ')';
       return this;
     },
