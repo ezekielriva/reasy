@@ -27,9 +27,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <h2 id="constructor">Constructor</h2>
-
+              
             </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Reasy = (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">  "use strict"</span>;</pre></div></div>
             
         </li>
         
@@ -40,19 +42,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>Easy constuctor that can get a test string.</p>
-<ul>
-<li>string <code>[string]</code> <code>(optional)</code>: original string to apply the regex</li>
-</ul>
-<hr>
+              <h2 id="constructor">Constructor</h2>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> REasy = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(string)</span> {</span>
-  <span class="hljs-keyword">this</span>.setTestString(string);
-};
-
-REasy.prototype = {</pre></div></div>
             
         </li>
         
@@ -63,9 +55,21 @@ REasy.prototype = {</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <h2 id="properties">Properties</h2>
+              <p>Easy constuctor that can get a test string.</p>
+<ul>
+<li>string <code>[string]</code> <code>(optional)</code>: original string to apply the regex</li>
+</ul>
+<hr>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> Reasy = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(string)</span> </span>{
+    <span class="hljs-keyword">var</span> _testString,
+        _flags,
+        _exp = <span class="hljs-string">''</span>
+    ;
+
+    _testString = string;</pre></div></div>
             
         </li>
         
@@ -76,11 +80,9 @@ REasy.prototype = {</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>_testString <code>[string]</code>: target of regex</p>
+              <h2 id="methods">Methods</h2>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  _testString: <span class="hljs-string">''</span>,</pre></div></div>
             
         </li>
         
@@ -91,11 +93,8 @@ REasy.prototype = {</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>_flags <code>[string]</code>: regex flags</p>
-
+              
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  _flags: <span class="hljs-string">''</span>,</pre></div></div>
             
         </li>
         
@@ -105,99 +104,6 @@ REasy.prototype = {</pre></div></div>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
-              </div>
-              <p>exp <code>[string]</code>: generated regex using reasy</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  exp: <span class="hljs-string">''</span>,</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-7">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
-              </div>
-              <h2 id="helpers">Helpers</h2>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-8">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
-              </div>
-              <p>Interesting helpers to be used by the user. It includes all basic selectors.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  helpers: {
-    ANY: {
-      SINGLE_CHAR: <span class="hljs-string">'.'</span>,
-      DIGIT: <span class="hljs-string">'\d'</span>,
-      NON_DIGIT: <span class="hljs-string">'\D'</span>,
-      ALPHANUMERIC: <span class="hljs-string">'\w'</span>,
-      SINGLE_WHITESPACE: <span class="hljs-string">'\s'</span>,
-      NON_WHITESPACE: <span class="hljs-string">'\S'</span>,
-    },
-    FEED: {
-      FORM: <span class="hljs-string">'\f'</span>,
-      LINE: <span class="hljs-string">'\n'</span>,
-    },
-    CARRIAGE_RETURN: <span class="hljs-string">'\r'</span>,
-    TAB: <span class="hljs-string">'\t'</span>,
-    VERTICAL_TAB: <span class="hljs-string">'\v'</span>,
-    NON_WORD: <span class="hljs-string">'\W'</span>,
-    NIL: <span class="hljs-string">'\0'</span>,
-
-    FLAGS: {
-      GLOBAL: <span class="hljs-string">'g'</span>,
-      CASE_SENSITIVE: <span class="hljs-string">'i'</span>,
-      MULTI_LINE: <span class="hljs-string">'m'</span>,
-      STICKY: <span class="hljs-string">'y'</span>
-    }
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-9">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
-              </div>
-              <h2 id="methods">Methods</h2>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-10">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-10">&#182;</a>
-              </div>
-              
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-11">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
               <p>Execute the generated expresion over test string.</p>
 <p>Returns:</p>
@@ -209,10 +115,106 @@ REasy.prototype = {</pre></div></div>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  execute: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">var</span> finalExpresion = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-keyword">this</span>.exp, <span class="hljs-keyword">this</span>._flags);
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._testString.match(finalExpresion);
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.execute = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> _testString.match( <span class="hljs-keyword">this</span>.getRegex() );
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Clean the generated expresion</p>
+<p>Return: <code>[object this]</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.clearExp = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      _exp = <span class="hljs-string">''</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Set test string</p>
+<p>Return: <code>[object this]</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.setTestString = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      _testString = value;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Get test string</p>
+<p>Return: <code>string</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.getTestString = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> _testString;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Get expresion string</p>
+<p>Return: <code>string</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.getExpression = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> _exp;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Get the generated regex</p>
+<p>Return: <code>[object RegExp]</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.getRegex = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(_exp, <span class="hljs-keyword">this</span>._flags);
+    };</pre></div></div>
             
         </li>
         
@@ -222,46 +224,6 @@ REasy.prototype = {</pre></div></div>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-12">&#182;</a>
-              </div>
-              <p>Clean the generated expresion</p>
-<p>Return: <code>[object this]</code></p>
-<hr>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  clearExp: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">this</span>.exp = <span class="hljs-string">''</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-13">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-13">&#182;</a>
-              </div>
-              <p>Set test string</p>
-<p>Return: <code>[object this]</code></p>
-<hr>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  setTestString: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">this</span>._testString = value;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-14">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
               <p>Set initial matching value.</p>
 <p>It adds <code>^</code> symbol to value passed by param</p>
@@ -275,23 +237,23 @@ REasy.prototype = {</pre></div></div>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  startWith: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.exp &gt; <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Your expresion already have been initializated. '</span> + <span class="hljs-keyword">this</span>.exp);
-    }
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">"^"</span>;
-    <span class="hljs-keyword">this</span>.have(value);
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.startWith = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">if</span>(_exp.length &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Your expresion already have been initializated. '</span> + _exp);
+      }
+      _exp += <span class="hljs-string">"^"</span>;
+      <span class="hljs-keyword">this</span>.have(value);
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
             
         </li>
         
         
-        <li id="section-15">
+        <li id="section-13">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+                <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
               <p>Set end matching value. It adds <code>$</code> symbol to value passed by param</p>
 <p>Matches end of input. If the multiline flag is set to true, also matches
@@ -306,14 +268,58 @@ immediately before a line break character.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  endWith: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">if</span>( <span class="hljs-string">"$"</span> == <span class="hljs-keyword">this</span>.exp.slice(-<span class="hljs-number">1</span>) ) {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Your expresion already has an ending. '</span> + <span class="hljs-keyword">this</span>.exp);
-    }
-    <span class="hljs-keyword">this</span>.have(value);
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">"$"</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.endWith = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">if</span>( <span class="hljs-string">"$"</span> === _exp.slice(-<span class="hljs-number">1</span>) ) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Your expresion already has an ending. '</span> + _exp);
+      }
+      <span class="hljs-keyword">this</span>.have(value);
+      _exp += <span class="hljs-string">"$"</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Matches the param 1 or more times. Add <code>+</code> matcher to value passed by param</p>
+<p>Params: value <code>[string]</code></p>
+<p>Return: <code>[object this]</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.atLeastOne = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">this</span>.have(value);
+      _exp += <span class="hljs-string">'+'</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Matches the param 0 or more times. Add <code>*</code> matcher to value passed by param</p>
+<p>Params: value <code>[string]</code></p>
+<p>Return: <code>[object this]</code></p>
+<hr>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.any = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">this</span>.have(value);
+      _exp += <span class="hljs-string">'*'</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
             
         </li>
         
@@ -324,18 +330,15 @@ immediately before a line break character.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
-              <p>Matches the param 1 or more times. Add <code>+</code> matcher to value passed by param</p>
-<p>Params: value <code>[string]</code></p>
+              <p>Match any char 0 or more times. Alias for <code>regex.any(&#39;.&#39;)</code></p>
 <p>Return: <code>[object this]</code></p>
 <hr>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  atLeastOne: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">this</span>.have(value);
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'+'</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.anything = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.any(<span class="hljs-keyword">this</span>.helpers.ANY.SINGLE_CHAR);
+    };</pre></div></div>
             
         </li>
         
@@ -346,18 +349,15 @@ immediately before a line break character.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <p>Matches the param 0 or more times. Add <code>*</code> matcher to value passed by param</p>
-<p>Params: value <code>[string]</code></p>
+              <p>Match any char 1 or more times. Alias for <code>regex.atLeastOne(&#39;.&#39;)</code></p>
 <p>Return: <code>[object this]</code></p>
 <hr>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  any: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">this</span>.have(value);
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'*'</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.something = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.atLeastOne(<span class="hljs-keyword">this</span>.helpers.ANY.SINGLE_CHAR);
+    };</pre></div></div>
             
         </li>
         
@@ -368,15 +368,18 @@ immediately before a line break character.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
-              <p>Match any char 0 or more times. Alias for <code>regex.any(&#39;.&#39;)</code></p>
+              <p>Matches the value 0 or 1 time. Add <code>?</code> matcher to value passed by param</p>
+<p>Params: value <code>[string]</code></p>
 <p>Return: <code>[object this]</code></p>
 <hr>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  anything: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.any(<span class="hljs-keyword">this</span>.helpers.ANY.SINGLE_CHAR);
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.maybe = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">this</span>.have(value);
+      _exp += <span class="hljs-string">'?'</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
             
         </li>
         
@@ -386,47 +389,6 @@ immediately before a line break character.</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
-              </div>
-              <p>Match any char 1 or more times. Alias for <code>regex.atLeastOne(&#39;.&#39;)</code></p>
-<p>Return: <code>[object this]</code></p>
-<hr>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  something: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.atLeastOne(<span class="hljs-keyword">this</span>.helpers.ANY.SINGLE_CHAR);
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-20">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-20">&#182;</a>
-              </div>
-              <p>Matches the value 0 or 1 time. Add <code>?</code> matcher to value passed by param</p>
-<p>Params: value <code>[string]</code></p>
-<p>Return: <code>[object this]</code></p>
-<hr>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  maybe: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">this</span>.have(value);
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'?'</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-21">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
               <p>Matches the value passed by param. It can get extra parameters to set
 quantity of ocurrences range</p>
@@ -441,25 +403,25 @@ quantity of ocurrences range</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  have: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, n, m)</span> {</span>
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'(?:'</span> + value + <span class="hljs-string">')'</span>;
-    <span class="hljs-keyword">if</span> ( <span class="hljs-string">'integer'</span> === <span class="hljs-keyword">typeof</span>(n) &amp;&amp; n &gt; <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">'undefined'</span> === <span class="hljs-keyword">typeof</span>(m) ) {
-      <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'{'</span> + n + <span class="hljs-string">'}'</span>;
-    }
-    <span class="hljs-keyword">if</span> ( <span class="hljs-string">'integer'</span> === <span class="hljs-keyword">typeof</span>(m) &amp;&amp; <span class="hljs-string">'integer'</span> === <span class="hljs-keyword">typeof</span>(n) &amp;&amp; n &gt; <span class="hljs-number">0</span> &amp;&amp; m &gt; <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'{'</span> + n + <span class="hljs-string">','</span> + m + <span class="hljs-string">'}'</span>;
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.have = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, n, m)</span> </span>{
+      _exp += <span class="hljs-string">'(?:'</span> + value + <span class="hljs-string">')'</span>;
+      <span class="hljs-keyword">if</span> ( <span class="hljs-string">"number"</span> === <span class="hljs-keyword">typeof</span>(n) &amp;&amp; n &gt; <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">'undefined'</span> === <span class="hljs-keyword">typeof</span>(m) ) {
+        _exp += <span class="hljs-string">'{'</span> + n + <span class="hljs-string">'}'</span>;
+      }
+      <span class="hljs-keyword">if</span> ( <span class="hljs-string">"number"</span> === <span class="hljs-keyword">typeof</span>(m) &amp;&amp; <span class="hljs-string">"number"</span> === <span class="hljs-keyword">typeof</span>(n) &amp;&amp; n &gt; <span class="hljs-number">0</span> &amp;&amp; m &gt; <span class="hljs-number">0</span>) {
+        _exp += <span class="hljs-string">'{'</span> + n + <span class="hljs-string">','</span> + m + <span class="hljs-string">'}'</span>;
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
             
         </li>
         
         
-        <li id="section-22">
+        <li id="section-20">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
+                <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
               <p>Generate a group of expresions.</p>
 <p>Params:</p>
@@ -471,21 +433,21 @@ quantity of ocurrences range</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  group: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(callback)</span> {</span>
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">'('</span>;
-    callback(<span class="hljs-keyword">this</span>);
-    <span class="hljs-keyword">this</span>.exp += <span class="hljs-string">')'</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.group = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(callback)</span> </span>{
+      _exp += <span class="hljs-string">'('</span>;
+      callback.apply(<span class="hljs-keyword">this</span>);
+      _exp += <span class="hljs-string">')'</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
             
         </li>
         
         
-        <li id="section-23">
+        <li id="section-21">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
+                <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
               <p>Add a flag passed by param to expresion execution</p>
 <p>Params:</p>
@@ -503,10 +465,42 @@ quantity of ocurrences range</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  addFlag: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(flag)</span> {</span>
-    <span class="hljs-keyword">this</span>._flags += flag;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.addFlag = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(flag)</span> </span>{
+      <span class="hljs-keyword">this</span>._flags += flag;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>Removes all flags.</p>
+<p>Return: <code>[object this]</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.clearFlags = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">this</span>._flags = <span class="hljs-string">''</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <h2 id="aliases">Aliases</h2>
+
+            </div>
             
         </li>
         
@@ -517,15 +511,8 @@ quantity of ocurrences range</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
-              <p>Removes all flags.</p>
-<p>Return: <code>[object this]</code></p>
-
+              
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  clearFlags: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">this</span>._flags = <span class="hljs-string">''</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
-  },</pre></div></div>
             
         </li>
         
@@ -536,9 +523,14 @@ quantity of ocurrences range</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-25">&#182;</a>
               </div>
-              <h2 id="aliases">Aliases</h2>
+              <p>Alias for endWith</p>
+<hr>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.andEndWith = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.endWith(value);
+    };</pre></div></div>
             
         </li>
         
@@ -549,8 +541,16 @@ quantity of ocurrences range</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-26">&#182;</a>
               </div>
-              
+              <p>Alias for have</p>
+
             </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.andHave = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.have(value);
+    };
+  };
+
+  Reasy.prototype = {</pre></div></div>
             
         </li>
         
@@ -561,14 +561,9 @@ quantity of ocurrences range</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
-              <p>Alias for endWith</p>
-<hr>
+              <h2 id="helpers">Helpers</h2>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  andEndWith: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.endWith(value);
-  },</pre></div></div>
             
         </li>
         
@@ -579,15 +574,40 @@ quantity of ocurrences range</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-28">&#182;</a>
               </div>
-              <p>Alias for have</p>
+              <p>Interesting helpers to be used by the user. It includes all basic selectors.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  andHave: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.have(value);
-  },
+            <div class="content"><div class='highlight'><pre>    helpers: {
+      ANY: {
+        SINGLE_CHAR: <span class="hljs-string">'.'</span>,
+        DIGIT: <span class="hljs-string">' \\d'</span>,
+        NON_DIGIT: <span class="hljs-string">' \\D'</span>,
+        ALPHANUMERIC: <span class="hljs-string">' \\w'</span>,
+        SINGLE_WHITESPACE: <span class="hljs-string">' \\s'</span>,
+        NON_WHITESPACE: <span class="hljs-string">' \\S'</span>,
+      },
+      FEED: {
+        FORM: <span class="hljs-string">' \\f'</span>,
+        LINE: <span class="hljs-string">' \\n'</span>,
+      },
+      CARRIAGE_RETURN: <span class="hljs-string">' \\r'</span>,
+      TAB: <span class="hljs-string">' \\t'</span>,
+      VERTICAL_TAB: <span class="hljs-string">' \\v'</span>,
+      NON_WORD: <span class="hljs-string">' \\W'</span>,
+      NIL: <span class="hljs-string">' \\0'</span>,
 
-};</pre></div></div>
+      FLAGS: {
+        GLOBAL: <span class="hljs-string">'g'</span>,
+        CASE_SENSITIVE: <span class="hljs-string">'i'</span>,
+        MULTI_LINE: <span class="hljs-string">'m'</span>,
+        STICKY: <span class="hljs-string">'y'</span>
+      }
+    }
+  };
+
+  <span class="hljs-keyword">return</span> Reasy;
+})();</pre></div></div>
             
         </li>
         
