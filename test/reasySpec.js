@@ -3,7 +3,7 @@ describe("Reasy", function() {
   describe("constructor", function() {
     it('should initialize original string', function() {
       reasy = new Reasy('original');
-      expect(reasy._testString).toEqual('original');
+      expect(reasy.getTestString()).toEqual('original');
     });
   });
 
@@ -14,7 +14,7 @@ describe("Reasy", function() {
 
     it("should add to exp the initial state of string matched", function() {
       reasy.startWith('b');
-      expect(reasy.exp).toEqual('^(?:b)');
+      expect(reasy.getExpression()).toEqual('^(?:b)');
     });
 
     it("should return object", function() {
@@ -29,7 +29,7 @@ describe("Reasy", function() {
 
     it("should add to exp the ending state of string matched", function() {
       reasy.endWith('b');
-      expect(reasy.exp).toEqual('(?:b)$');
+      expect(reasy.getExpression()).toEqual('(?:b)$');
     });
 
     it("should return object", function() {
@@ -49,7 +49,7 @@ describe("Reasy", function() {
 
     it("should add to matcher current value", function() {
       reasy.have('b');
-      expect(reasy.exp).toEqual('(?:b)');
+      expect(reasy.getExpression()).toEqual('(?:b)');
     });
 
     it("should return object", function() {
@@ -58,12 +58,12 @@ describe("Reasy", function() {
 
     it("should add specific quantity matcher", function() {
       reasy.have('b', 1);
-      expect( reasy.exp ).toEqual('(?:b){1}');
+      expect( reasy.getExpression() ).toEqual('(?:b){1}');
     });
 
     it("should add specific quantity matcher and limit of ocurrences", function() {
       reasy.have('b', 1, 2);
-      expect( reasy.exp ).toEqual('(?:b){1,2}');
+      expect( reasy.getExpression() ).toEqual('(?:b){1,2}');
     });
   });
 
@@ -74,7 +74,7 @@ describe("Reasy", function() {
 
     it("should add a plus into exp if it has not arguments", function() {
       reasy.atLeastOne('b');
-      expect( reasy.exp ).toEqual('(?:b)+');
+      expect( reasy.getExpression() ).toEqual('(?:b)+');
     });
 
     it("should return object", function() {
@@ -89,7 +89,7 @@ describe("Reasy", function() {
 
     it("should add a asterisk into exp if it has not arguments", function() {
       reasy.any('b');
-      expect( reasy.exp ).toEqual('(?:b)*');
+      expect( reasy.getExpression() ).toEqual('(?:b)*');
     });
 
     it("should return object", function() {
@@ -104,7 +104,7 @@ describe("Reasy", function() {
 
     it("should add expression to search any character", function() {
       reasy.anything();
-      expect( reasy.exp ).toEqual('(?:.)*');
+      expect( reasy.getExpression() ).toEqual('(?:.)*');
     });
 
     it("should return object", function() {
@@ -123,7 +123,7 @@ describe("Reasy", function() {
 
     it('should add a text with a question mark', function() {
       reasy.maybe('ab');
-      expect( reasy.exp ).toEqual('(?:ab)?');
+      expect( reasy.getExpression() ).toEqual('(?:ab)?');
     });
   });
 
@@ -142,7 +142,7 @@ describe("Reasy", function() {
       reasy.group(function() {
         this.have('a');
       });
-      expect( reasy.exp ).toEqual('((?:a))');
+      expect( reasy.getExpression() ).toEqual('((?:a))');
     });
   });
 
