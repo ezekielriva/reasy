@@ -65,7 +65,7 @@ var Reasy = (function () {
     // Return: `[object RegExp]`
     // - - -
     this.getRegex = function() {
-      return new RegExp(_exp, this._flags);
+      return new RegExp(_exp, _flags);
     };
 
     // Set initial matching value.
@@ -79,14 +79,29 @@ var Reasy = (function () {
     // Throw:
     //  - Your expresion already have been initializated. {expresion}
     // - - -
-    this.startWith = function(value) {
+    this.startWith = function(value, min, max) {
+      if(_exp.length > 0) {
+        throw new Error('Your expresion already have been initializated. ' + _exp);
+      }
+      return this.start().have(value, min, max);
+    };
+
+    // Set initial matching value.
+    //
+    // It adds `^` symbol to value passed by param
+    //
+    // Return: `[object this]`
+    //
+    // Throw:
+    //  - Your expresion already have been initializated. {expresion}
+    // - - -
+    this.start = function () {
       if(_exp.length > 0) {
         throw new Error('Your expresion already have been initializated. ' + _exp);
       }
       _exp += "^";
-      this.have(value);
       return this;
-    };
+    }
 
     // Set end matching value. It adds `$` symbol to value passed by param
     //
@@ -104,10 +119,26 @@ var Reasy = (function () {
       if( "$" === _exp.slice(-1) ) {
         throw new Error('Your expresion already has an ending. ' + _exp);
       }
-      this.have(value);
+      return this.have(value).end();
+    };
+
+    // Set end matching value. It adds `$` symbol to value passed by param
+    //
+    // Matches end of input. If the multiline flag is set to true, also matches
+    // immediately before a line break character.
+    //
+    // Return: `[object this]`
+    //
+    // Throw:
+    //  - Your expresion already has an ending. {expresion}
+    // - - -
+    this.end = function () {
+      if( "$" === _exp.slice(-1) ) {
+        throw new Error('Your expresion already has an ending. ' + _exp);
+      }
       _exp += "$";
       return this;
-    };
+    }
 
     // Matches the param 1 or more times. Add `+` matcher to value passed by param
     //
@@ -182,6 +213,21 @@ var Reasy = (function () {
       return this;
     };
 
+    // Matches the value passed by param. It can get extra parameters to set
+    // quantity of ocurrences range
+    //
+    // Params:
+    //  - value `[string]`: matched string.
+    //  - n `[integer]` `(optional)`: the exactly number of ocurrences.
+    //  - m `[integer]` `(optional)`: the limit of ocurrences.
+    //
+    // Return: `[object this]`
+    // - - -
+    this.orHave = function (value, n, m) {
+      _exp += '|';
+      return this.have(value, n, m);
+    }
+
     // Generate a group of expresions.
     //
     // Params:
@@ -208,7 +254,7 @@ var Reasy = (function () {
     // Return: `[object this]`
     // - - -
     this.addFlag = function(flag) {
-      this._flags += flag;
+      _flags += flag;
       return this;
     };
 
@@ -217,7 +263,7 @@ var Reasy = (function () {
     // Return: `[object this]`
     //
     this.clearFlags = function() {
-      this._flags = '';
+      _flags = '';
       return this;
     };
 
