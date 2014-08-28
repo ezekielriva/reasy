@@ -24,6 +24,7 @@
   "homepage": "https://github.com/ezekielriva/reasy",
   "devDependencies": {
     "docco": "~0.6.3",
+    "glob": "^4.0.5",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-jshint": "^0.10.0",

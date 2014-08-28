@@ -1,16 +1,17 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    files: {
+      js: 'src/**/*.js',
+      test: 'src/**/*Spec.js'
+    },
 
     concat: {
       options: {
-        // define a string to put between each file in the concatenated output
         separator: ';'
       },
       dist: {
-        // the files to concatenate
-        src: ['src/**/*.js'],
-        // the location of the resulting JS file
+        src: '<%= files.js %>',
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -24,11 +25,9 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      // define the files to lint
-      files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['gruntfile.js', '<%= files.js %>', '<%= files.test %>'],
       options: {
         globals: {
-          jQuery: false,
           console: true,
           module: true
         }
@@ -54,10 +53,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-karma-coveralls');
 
-  // this would be run by typing "grunt test" on the command line
   grunt.registerTask('test', ['jshint', 'karma', 'coveralls']);
 
-  // the default task can be run just by typing "grunt" on the command line
   grunt.registerTask('default', ['jshint', 'karma', 'coveralls', 'concat', 'uglify']);
 };
 
